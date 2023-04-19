@@ -9,8 +9,8 @@ import java.util.*
 data class ShoppingList(
     @ColumnInfo(name = "list_id")
     @PrimaryKey
-    val id:Int,
-    val name:String
+    val id: Int,
+    val name: String,
 )
 
 @Entity(tableName = "items")
@@ -18,12 +18,12 @@ data class Item(
     @ColumnInfo(name = "item_id")
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val itemName:String,
-    val qty:String,
-    val listId:Int,
-    val storeIdFk:Int,
+    val itemName: String,
+    val qty: String,
+    val listId: Int,
+    val storeIdFk: Int,
     val date: Date,
-    val isChecked:Boolean
+    val isChecked: Boolean,
 )
 
 @Entity(tableName = "stores")
@@ -31,7 +31,8 @@ data class Store(
     @ColumnInfo(name = "store_id")
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val listIdFk: Int
+    val listIdFk: Int,
+    val storeName: String,
 )
 
 

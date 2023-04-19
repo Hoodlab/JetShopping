@@ -10,6 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import hoods.com.jetshopping.ui.JetShoppingNavigation
+import hoods.com.jetshopping.ui.home.HomeScreen
 import hoods.com.jetshopping.ui.theme.JetShoppingTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,12 +20,19 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetShoppingTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background) {
-
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    JetShoppingApp()
                 }
             }
         }
+    }
+
+    @Composable
+    fun JetShoppingApp() {
+        JetShoppingNavigation()
     }
 }
 
